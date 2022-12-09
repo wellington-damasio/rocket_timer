@@ -44,15 +44,15 @@ export const CyclesContextProvider = ({
       cycles: [],
       activeCycleId: null,
     },
-    () => {
-      const storedStateAsJSON = localStorage.getItem(
-        '@ignite-timer:cycles-state-1.0.0',
-      )
+//     () => {
+//       const storedStateAsJSON = localStorage.getItem(
+//         '@ignite-timer:cycles-state-1.0.0',
+//       )
 
-      if (storedStateAsJSON) {
-        return JSON.parse(storedStateAsJSON)
-      }
-    },
+//       if (storedStateAsJSON) {
+//         return JSON.parse(storedStateAsJSON)
+//       }
+//     },
   )
 
   const { cycles, activeCycleId } = cyclesState
@@ -65,12 +65,11 @@ export const CyclesContextProvider = ({
     return 0
   })
 
-  useEffect(() => {
-    const stateJSON = JSON.stringify(cyclesState)
-    console.log(stateJSON)
+//   useEffect(() => {
+//     const stateJSON = JSON.stringify(cyclesState)
 
-    localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
-  }, [cyclesState])
+//     localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
+//   }, [cyclesState])
 
   const markCurrentCycleAsFinished = () => {
     const newCycles = cycles.map((cycle) => {
